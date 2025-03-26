@@ -40,5 +40,5 @@ variable "node_min_size" {
 variable "node_instance_types" {
   description = "List of instance types for the worker nodes"
   type        = list(string)
-  default     = ["t3.medium"]
+  default     = ["t3.small"]
 } 
