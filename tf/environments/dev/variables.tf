@@ -7,7 +7,13 @@ variable "environment" {
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "ap-northeast-2"
+}
+
+variable "kubernetes_version" {
+  description = "Kubernetes version for EKS cluster"
+  type        = string
+  default     = "1.32"
 }
 
 variable "vpc_cidr" {
@@ -49,7 +55,7 @@ variable "node_desired_size" {
 variable "node_max_size" {
   description = "Maximum number of worker nodes"
   type        = number
-  default     = 4
+  default     = 1
 }
 
 variable "node_min_size" {

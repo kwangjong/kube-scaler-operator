@@ -22,7 +22,7 @@ provider "aws" {
 module "networking" {
   source = "../../modules/networking"
 
-  environment            = var.environment
+  environment           = var.environment
   vpc_cidr              = var.vpc_cidr
   availability_zones    = var.availability_zones
   public_subnet_cidrs   = var.public_subnet_cidrs
@@ -40,7 +40,8 @@ module "iam" {
 module "eks" {
   source = "../../modules/eks"
 
-  cluster_name          = "${var.environment}-cluster"
+  cluster_name         = "${var.environment}-cluster"
+  kubernetes_version   = var.kubernetes_version
   vpc_id               = module.networking.vpc_id
   subnet_ids           = module.networking.private_subnet_ids
   node_instance_types  = var.node_instance_types
